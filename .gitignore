@@ -28,3 +28,12 @@ LICENSE.txt
 LICENSE-Paulscode IBXM Library.txt
 LICENSE-Paulscode SoundSystem CodecIBXM.txt
 README.txt
+.gradle
+.settings
+bin
+build
+run
+.classpath
+.project
+LineageCraft_Client.launch
+LineageCraft_Server.launch
