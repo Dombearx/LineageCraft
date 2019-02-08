@@ -10,6 +10,10 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+/*
+ * EventBusSubscriber means that this class will be automaticly launched while game loading
+ * Don't need to initialize it anywhere
+ */
 @EventBusSubscriber
 public class LineageCraftRegisterHandler {
 

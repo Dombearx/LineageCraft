@@ -22,6 +22,4 @@ public class LineageCraftItemBase extends Item implements IHasModel{
 		
 	}
 
-	
-
 }

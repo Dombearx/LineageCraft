@@ -2,7 +2,9 @@ package com.dombear.lineagecraft;
 
 import com.dombear.lineagecraft.proxy.CommonProxy;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
+import com.dombear.lineagecraft.utils.handlers.LineageCraftEventHandler;
 import com.dombear.lineagecraft.utils.handlers.LineageCraftRegisterHandler;
+import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.model.obj.OBJLoader;
@@ -27,14 +29,14 @@ public class LineageCraft {
 
 	public static final CreativeTabs CREATIVE_TAB = new LineageCraftCreativeTab();
 
-//	LineageCraftEventHandler eventHandler = new LineageCraftEventHandler();
+	LineageCraftEventHandler eventHandler = new LineageCraftEventHandler();
 	public static SimpleNetworkWrapper network;
 	
 	
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-		System.out.println("LineageCraft preInit phaze");
+		System.out.println("LineageCraft preInit");
 		
 		
 		OBJLoader.INSTANCE.addDomain(LineageCraftReferences.MOD_ID);
@@ -78,11 +80,11 @@ public class LineageCraft {
 //		proxy.init();
 		proxy.registerGuis();
 //		
-//		eventHandler.registerEvents();
+		eventHandler.registerEvents();
 		
 		LineageCraftRegisterHandler.initRegisters();
 		
-		//LineageCraftSoundHandler.init();
+		LineageCraftSoundHandler.init();
 	}
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
