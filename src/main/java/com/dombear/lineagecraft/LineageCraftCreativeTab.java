@@ -1,5 +1,7 @@
 package com.dombear.lineagecraft;
 
+import com.dombear.lineagecraft.init.LineageCraftItems;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -11,6 +13,6 @@ public class LineageCraftCreativeTab extends CreativeTabs{
 
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(LineageCraftItems.soulshotd);
+		return new ItemStack(LineageCraftItems.soulShotDGrade);
 	}
 }

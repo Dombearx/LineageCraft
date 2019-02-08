@@ -1,0 +1,92 @@
+{
+	"item.ewd.open": {
+        "category": "player",
+        "subtitle": "item.ewd.open",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:item/ewd/open", 
+                "stream": true 
+            } 
+       ]
+    },
+    "item.ewd.activated": {
+        "category": "player",
+        "subtitle": "item.ewd.activated",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:item/ewd/activated", 
+                "stream": true 
+            } 
+       ]
+    },
+    "item.ewd.successful": {
+        "category": "player",
+        "subtitle": "item.ewd.successful",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:item/ewd/successful", 
+                "stream": true 
+            } 
+       ]
+    },
+    "item.ewd.failure": {
+        "category": "player",
+        "subtitle": "item.ewd.failure",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:item/ewd/failure", 
+                "stream": true 
+            } 
+       ]
+    },
+    "item.soulshot.activated": {
+        "category": "player",
+        "subtitle": "item.soulshot.activated",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:item/soulshot/activated", 
+                "stream": true 
+            } 
+       ]
+    },
+    "critical": {
+        "category": "player",
+        "subtitle": "critical",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:critical", 
+                "stream": true 
+            } 
+       ]
+    },
+    "invite": {
+        "category": "player",
+        "subtitle": "invite",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:invite", 
+                "stream": true 
+            } 
+       ]
+    },
+    "reject": {
+        "category": "player",
+        "subtitle": "reject",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:reject", 
+                "stream": true 
+            } 
+       ]
+    },
+    "leave": {
+        "category": "leave",
+        "subtitle": "reject",
+        "sounds": [ 
+            { 
+                "name": "lineagecraft:leave", 
+                "stream": true 
+            } 
+       ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "lineagecraft:sacrytable" },
+        "facing=north": { "model": "lineagecraft:sacrytable" },
+        "facing=south": { "model": "lineagecraft:sacrytable", "y": 180 },
+        "facing=west":  { "model": "lineagecraft:sacrytable", "y": 270 },
+        "facing=east":  { "model": "lineagecraft:sacrytable", "y": 90 }
+    }
+}

@@ -1,5 +1,6 @@
 package com.dombear.lineagecraft;
 
+import com.dombear.lineagecraft.proxy.CommonProxy;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,9 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = LineageCraftReferences.MOD_ID, name = LineageCraftReferences.NAME, version = LineageCraftReferences.VERSION, acceptedMinecraftVersions = LineageCraftReferences.ACCEPTED_VERSIONS)
 public class LineageCraft {
@@ -22,9 +21,9 @@ public class LineageCraft {
 	public static LineageCraft instance;
 	
 	@SidedProxy(clientSide = LineageCraftReferences.CLIENT_PROXY_CLASS, serverSide = LineageCraftReferences.SERVER_PROXY_CLASS)
-//	public static CommonProxy proxy;
+	public static CommonProxy proxy;
 
-//	public static final CreativeTabs CREATIVE_TAB = new LineageCraftCreativeTab();
+	public static final CreativeTabs CREATIVE_TAB = new LineageCraftCreativeTab();
 
 //	LineageCraftEventHandler eventHandler = new LineageCraftEventHandler();
 	public static SimpleNetworkWrapper network;

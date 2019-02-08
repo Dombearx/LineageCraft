@@ -1,0 +1,52 @@
+item.amuletOfLost.name=Amulet of lost
+item.ead.name=Enchant armor D-grade
+item.ewd.name=Enchant weapon D-grade
+
+
+item.soulshotigrade.name=Soulshot I-Grade
+item.soulshotdgrade.name=Soulshot D-Grade
+
+
+item.sacryred.name=Red Special Ability Crystal
+item.sacrygreen.name=Green Special Ability Crystal
+item.sacryblue.name=Blue Special Ability Crystal
+
+item.brokenhelmet.name=Broken Helmet
+item.brokenchestplate.name=Broken Chestplate
+item.brokenleggings.name=Broken Leggings
+item.brokenboots.name=Broken Boots
+
+
+item.sspack.name=Soulshot Bag
+item.sspackssd.name=Bag Of Diamond Shoulshots
+item.sspackssg.name=Bag Of Golden Shoulshots
+item.sspackssi.name=Bag Of Iron Shoulshots
+item.sspacksss.name=Bag Of Stone Shoulshots
+item.sspackssw.name=Bag Of Wooden Shoulshots
+
+tile.satable.name=Special ability table
+itemGroup.lineageCraftTab=Lineage Craft
+
+item.soulshot.activated=Soulshot Activated
+
+item.ewd.open=EWD Opened
+
+achievement.soulstealeradvanced=More power!
+achievement.soulstealeradvanced.desc=Craft best soulshots
+achievement.soulstealerbasic=Stronger?
+achievement.soulstealerbasic.desc=Craft simple soulshots
+achievement.fulldiamondarmor=Unkillable
+achievement.fulldiamondarmor.desc=Wear full +6 armor
+
+enchantment.level.11=XI
+enchantment.level.12=XII
+enchantment.level.13=XIII
+enchantment.level.14=XIV
+enchantment.level.15=XV
+enchantment.level.16=XVI
+
+key.categories.lineagecraft=LineageCraft
+key.partyGUI=Party
+
+gui.party.invite=Invite
+gui.party.leader=Change Leader
