@@ -2,6 +2,7 @@ package com.dombear.lineagecraft;
 
 import com.dombear.lineagecraft.proxy.CommonProxy;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
+import com.dombear.lineagecraft.utils.handlers.LineageCraftRegisterHandler;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.model.obj.OBJLoader;
@@ -91,7 +92,7 @@ public class LineageCraft {
 //		
 //		eventHandler.registerEvents();
 		
-//		LineageCraftRegisterHandler.initRegisters();
+		LineageCraftRegisterHandler.initRegisters();
 		
 		//LineageCraftSoundHandler.init();
 	}
