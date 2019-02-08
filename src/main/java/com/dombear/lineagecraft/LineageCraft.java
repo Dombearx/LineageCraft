@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 @Mod(modid = LineageCraftReferences.MOD_ID, name = LineageCraftReferences.NAME, version = LineageCraftReferences.VERSION, acceptedMinecraftVersions = LineageCraftReferences.ACCEPTED_VERSIONS)
@@ -39,20 +40,9 @@ public class LineageCraft {
 		OBJLoader.INSTANCE.addDomain(LineageCraftReferences.MOD_ID);
 		
 		
-//		ModItems.init();
-//		ModItems.register();
-//		
-//		ModBlocks.init();
-//		ModBlocks.register();
-//		
-//		ModArmor.init();
-//		ModArmor.register();
-//		
-//		ModStructures.register();
 //		
 //		AchievementHandler.registerAchievements();
 //		
-//		proxy.preInit();
 		
 //		LineageCraftTileEntities.init();
 		
@@ -62,7 +52,7 @@ public class LineageCraft {
 		
 		//LineageCraftRenderHandler.registerEntityRenders();
 		
-//		network = NetworkRegistry.INSTANCE.newSimpleChannel(LineageCraftReferences.MOD_ID);
+		network = NetworkRegistry.INSTANCE.newSimpleChannel(LineageCraftReferences.MOD_ID);
 //		network.registerMessage(new EWDPacketHandler(), EWDPacket.class, 1, Side.SERVER);
 //		network.registerMessage(new EADPacketHandler(), EADPacket.class, 2, Side.SERVER);
 //		network.registerMessage(new CRYTablePacketHandler(), CRYTablePacket.class, 3, Side.SERVER);
@@ -86,9 +76,7 @@ public class LineageCraft {
 		System.out.println("----------init-----------------");
 		
 //		proxy.init();
-//		proxy.registerGuis();
-//		
-//		ModCrafting.register();
+		proxy.registerGuis();
 //		
 //		eventHandler.registerEvents();
 		
