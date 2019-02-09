@@ -1,6 +1,9 @@
 item.amuletOfLost.name=Amulet of lost
-item.ead.name=Enchant armor D-grade
-item.ewd.name=Enchant weapon D-grade
+
+item.enchantarmordgrade.name=Enchant armor D-grade
+item.enchantweapondgrade.name=Enchant weapon D-grade
+item.enchantarmorigrade.name=Enchant armor I-grade
+item.enchantweaponigrade.name=Enchant weapon I-grade
 
 
 item.soulshotigrade.name=Soulshot I-Grade
