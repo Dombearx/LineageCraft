@@ -62,7 +62,6 @@ public class GuiEnchantArmor extends GuiContainer{
 			isWorking = true;	
 			this.mc.world.playSound(this.mc.player, this.mc.player.getPosition(), LineageCraftSoundHandler.ENCHANT_SCROLL_ACTIVATED, SoundCategory.PLAYERS, 0.3F, 1.0F);
 		}
-		
 	}
 	
 	@Override
@@ -125,6 +124,7 @@ public class GuiEnchantArmor extends GuiContainer{
 		super.initGui();
 		this.buttonList.clear();
         this.buttonList.add(new GuiButton(0, this.guiLeft + 110, this.guiTop + 32, 50, 20, "Enchant"));
+        this.mc.world.playSound(this.mc.player, this.mc.player.getPosition(), LineageCraftSoundHandler.ENCHANT_SCROLL_OPEN, SoundCategory.PLAYERS, 0.3F, 1.0F);
 	}
 	
 	

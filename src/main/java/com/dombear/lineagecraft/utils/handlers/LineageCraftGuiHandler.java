@@ -2,6 +2,7 @@ package com.dombear.lineagecraft.utils.handlers;
 
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantWeapon;
+import com.dombear.lineagecraft.gui.guis.GuiEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantWeapon;
 
@@ -37,6 +38,7 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 		}
 		*/
 		if (ID == ENCHANT_ARMOR_TILE_ENTITY_GUI){
+			System.out.println("container returned");
 			return new ContainerEnchantArmor(player.inventory, new InventoryEnchantArmor(player.getHeldItemMainhand()));
 		}
 		/*
@@ -72,9 +74,11 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 		if (ID == EWD_TILE_ENTITY_GUI){
 			return new GuiEWD((ContainerEWD) new ContainerEWD(player.inventory, new EWDInventory(player.getHeldItemMainhand())));	
 		}
-		if (ID == EAD_TILE_ENTITY_GUI){
-			return new GuiEAD((ContainerEAD) new ContainerEAD(player.inventory, new EADInventory(player.getHeldItemMainhand())));	
+		*/
+		if (ID == ENCHANT_ARMOR_TILE_ENTITY_GUI){
+			return new GuiEnchantArmor((ContainerEnchantArmor) new ContainerEnchantArmor(player.inventory, new InventoryEnchantArmor(player.getHeldItemMainhand())));	
 		}
+		/*
 		
 		if (ID == SATABLE_TILE_ENTITY_GUI){
 			return new GuiSATable((ContainerSATable) new ContainerSATable(player.inventory, (TileEntitySATable) world.getTileEntity(new BlockPos(x, y, z))));

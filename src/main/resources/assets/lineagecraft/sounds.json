@@ -1,40 +1,40 @@
 {
-	"item.ewd.open": {
+	"item.enchant_scroll.open": {
         "category": "player",
-        "subtitle": "item.ewd.open",
+        "subtitle": "item.enchant_scroll.open",
         "sounds": [ 
             { 
-                "name": "lineagecraft:item/ewd/open", 
+                "name": "lineagecraft:item/enchant_scroll/open", 
                 "stream": true 
             } 
        ]
     },
-    "item.ewd.activated": {
+    "item.enchant_scroll.activated": {
         "category": "player",
-        "subtitle": "item.ewd.activated",
+        "subtitle": "item.enchant_scroll.activated",
         "sounds": [ 
             { 
-                "name": "lineagecraft:item/ewd/activated", 
+                "name": "lineagecraft:item/enchant_scroll/activated", 
                 "stream": true 
             } 
        ]
     },
-    "item.ewd.successful": {
+    "item.enchant_scroll.successful": {
         "category": "player",
-        "subtitle": "item.ewd.successful",
+        "subtitle": "item.enchant_scroll.successful",
         "sounds": [ 
             { 
-                "name": "lineagecraft:item/ewd/successful", 
+                "name": "lineagecraft:item/enchant_scroll/successful", 
                 "stream": true 
             } 
        ]
     },
-    "item.ewd.failure": {
+    "item.enchant_scroll.failure": {
         "category": "player",
-        "subtitle": "item.ewd.failure",
+        "subtitle": "item.enchant_scroll.failure",
         "sounds": [ 
             { 
-                "name": "lineagecraft:item/ewd/failure", 
+                "name": "lineagecraft:item/enchant_scroll/failure", 
                 "stream": true 
             } 
        ]
