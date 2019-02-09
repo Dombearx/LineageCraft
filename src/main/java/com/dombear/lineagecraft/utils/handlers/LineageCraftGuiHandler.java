@@ -1,5 +1,10 @@
 package com.dombear.lineagecraft.utils.handlers;
 
+import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
+import com.dombear.lineagecraft.gui.containers.ContainerEnchantWeapon;
+import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
+import com.dombear.lineagecraft.gui.inventories.InventoryEnchantWeapon;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
@@ -26,13 +31,15 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 		if (ID == CRYTABLE_TILE_ENTITY_GUI){
 			return new ContainerCRYTable(player.inventory, (TileEntityCRYTable) world.getTileEntity(new BlockPos(x, y, z)));
 		}
-		if (ID == EWD_TILE_ENTITY_GUI){
-			return new ContainerEWD(player.inventory, new EWDInventory(player.getHeldItemMainhand()));
-		}
-		if (ID == EAD_TILE_ENTITY_GUI){
-			return new ContainerEAD(player.inventory, new EADInventory(player.getHeldItemMainhand()));
-		}
 		
+		if (ID == ENCHANT_WEAPON_TILE_ENTITY_GUI){
+			return new ContainerEnchantWeapon(player.inventory, new InventoryEnchantWeapon(player.getHeldItemMainhand()));
+		}
+		*/
+		if (ID == ENCHANT_ARMOR_TILE_ENTITY_GUI){
+			return new ContainerEnchantArmor(player.inventory, new InventoryEnchantArmor(player.getHeldItemMainhand()));
+		}
+		/*
 		if (ID == SATABLE_TILE_ENTITY_GUI){
 			player.sendMessage(new TextComponentString("satable gui handler"));
 			return new ContainerSATable(player.inventory, (TileEntitySATable) world.getTileEntity(new BlockPos(x, y, z)));

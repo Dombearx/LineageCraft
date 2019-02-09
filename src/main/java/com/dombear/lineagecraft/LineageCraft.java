@@ -77,9 +77,7 @@ public class LineageCraft {
 	public void init(FMLInitializationEvent event){
 		System.out.println("----------init-----------------");
 		
-//		proxy.init();
 		proxy.registerGuis();
-//		
 		eventHandler.registerEvents();
 		
 		LineageCraftRegisterHandler.initRegisters();
