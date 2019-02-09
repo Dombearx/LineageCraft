@@ -7,6 +7,7 @@ import com.dombear.lineagecraft.gui.ProgressBar;
 import com.dombear.lineagecraft.gui.ProgressBar.ProgressBarDirection;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
+import com.dombear.lineagecraft.packets.EnchantArmorPacket;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
 import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 
@@ -111,7 +112,7 @@ public class GuiEnchantArmor extends GuiContainer{
 			if(minCooldown >= time){
 				this.isWorking = false;
 				minCooldown = 0;
-				//LineageCraft.network.sendToServer(new EADPacket());
+				LineageCraft.network.sendToServer(new EnchantArmorPacket());
 			}
 		}	
 		
