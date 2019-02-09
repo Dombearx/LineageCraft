@@ -1,5 +1,7 @@
 package com.dombear.lineagecraft.items;
 
+import com.dombear.lineagecraft.utils.LineageCraftTypes.Type;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -7,15 +9,16 @@ import net.minecraft.world.World;
 
 public class ItemSoulShot extends LineageCraftItemBase {
 	
+	
 	private Type type;
-	
-	public enum Type {
-		IRON, DIAMOND;
-	}
-	
+
 	public ItemSoulShot(String name, Type type){
 		super(name);
 		this.type = type;
+	}
+	
+	public Type getType() {
+		return this.type;
 	}
 	
 	@Override

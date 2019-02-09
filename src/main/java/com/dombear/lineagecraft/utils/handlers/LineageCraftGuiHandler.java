@@ -8,8 +8,8 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 
 	
 	public static final int CRYTABLE_TILE_ENTITY_GUI = 0;
-	public static final int EWD_TILE_ENTITY_GUI = 1;
-	public static final int EAD_TILE_ENTITY_GUI = 2;
+	public static final int ENCHANT_WEAPON_TILE_ENTITY_GUI = 1;
+	public static final int ENCHANT_ARMOR_TILE_ENTITY_GUI = 2;
 	public static final int SATABLE_TILE_ENTITY_GUI = 3;
 	public static final int SSPACKER_TILE_ENTITY_GUI = 4;
 	public static final int BETTER_ANVIL_TILE_ENTITY = 5;
