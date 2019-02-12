@@ -3,6 +3,7 @@ package com.dombear.lineagecraft.utils.handlers;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantWeapon;
 import com.dombear.lineagecraft.gui.guis.GuiEnchantArmor;
+import com.dombear.lineagecraft.gui.guis.GuiEnchantWeapon;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantWeapon;
 
@@ -32,11 +33,11 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 		if (ID == CRYTABLE_TILE_ENTITY_GUI){
 			return new ContainerCRYTable(player.inventory, (TileEntityCRYTable) world.getTileEntity(new BlockPos(x, y, z)));
 		}
-		
+		*/
 		if (ID == ENCHANT_WEAPON_TILE_ENTITY_GUI){
 			return new ContainerEnchantWeapon(player.inventory, new InventoryEnchantWeapon(player.getHeldItemMainhand()));
 		}
-		*/
+		
 		if (ID == ENCHANT_ARMOR_TILE_ENTITY_GUI){
 			System.out.println("container returned");
 			return new ContainerEnchantArmor(player.inventory, new InventoryEnchantArmor(player.getHeldItemMainhand()));
@@ -71,10 +72,11 @@ public class LineageCraftGuiHandler  implements IGuiHandler{
 		if (ID == CRYTABLE_TILE_ENTITY_GUI){
 			return new GuiCRYTable((ContainerCRYTable) new ContainerCRYTable(player.inventory, (TileEntityCRYTable) world.getTileEntity(new BlockPos(x, y, z))));
 		}
-		if (ID == EWD_TILE_ENTITY_GUI){
-			return new GuiEWD((ContainerEWD) new ContainerEWD(player.inventory, new EWDInventory(player.getHeldItemMainhand())));	
-		}
 		*/
+		if (ID == ENCHANT_WEAPON_TILE_ENTITY_GUI){
+			return new GuiEnchantWeapon((ContainerEnchantWeapon) new ContainerEnchantWeapon(player.inventory, new InventoryEnchantWeapon(player.getHeldItemMainhand())));	
+		}
+		
 		if (ID == ENCHANT_ARMOR_TILE_ENTITY_GUI){
 			return new GuiEnchantArmor((ContainerEnchantArmor) new ContainerEnchantArmor(player.inventory, new InventoryEnchantArmor(player.getHeldItemMainhand())));	
 		}
