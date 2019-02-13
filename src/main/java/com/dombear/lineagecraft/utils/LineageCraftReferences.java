@@ -11,4 +11,8 @@ public class LineageCraftReferences {
 	
 	
 	public static final int ENTITY_STONE_GOLEM = 240;
+	
+	public static final int MAX_ENCHANTMENT_LEVEL = 16;
+	public static final int SAFE_ENCHANTMENT_LEVEL = 3;
+	public static final int ENCHANTMENT_PERCENT_CHANCE = 67;
 }
