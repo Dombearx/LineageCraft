@@ -28,8 +28,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class EnchantWeaponPacketHandler extends EnchantScrollHandlerBase implements IMessageHandler<EnchantWeaponPacket, EnchantWeaponPacket>{
 	
-	
-	
 	@Override
 	public EnchantWeaponPacket onMessage(EnchantWeaponPacket message, MessageContext ctx) {
 

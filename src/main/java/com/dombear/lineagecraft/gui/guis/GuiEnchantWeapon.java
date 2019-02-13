@@ -75,8 +75,10 @@ public class GuiEnchantWeapon extends GuiContainer{
         if(isWorking) {
 	    	minCooldown += partialTicks;
 	    }       
-	    
+        this.renderHoveredToolTip(mouseX, mouseY);
+        
         super.drawScreen(mouseX, mouseY, partialTicks);
+        
     }
 
 	@Override
