@@ -8,6 +8,7 @@ import com.dombear.lineagecraft.gui.ProgressBar.ProgressBarDirection;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantWeapon;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantWeapon;
 import com.dombear.lineagecraft.packets.EnchantArmorPacket;
+import com.dombear.lineagecraft.packets.EnchantWeaponPacket;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
 import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 
@@ -82,28 +83,7 @@ public class GuiEnchantWeapon extends GuiContainer{
 		if(inventory.getStackInSlot(0) != ItemStack.EMPTY){
 			ItemStack armor = inventory.getStackInSlot(0);
 			GlStateManager.blendFunc(GlStateManager.SourceFactor.ZERO, GlStateManager.DestFactor.ONE);
-			
-			if(armor.isItemEnchanted()){
-				for(int i = 0; i < armor.getEnchantmentTagList().tagCount(); i++){
-					if(armor.getEnchantmentTagList().getCompoundTagAt(i).hasKey("id")){
-						if(armor.getEnchantmentTagList().getCompoundTagAt(i).getShort("id") == enchantment_protecion_id){
-							int lvl_prot = armor.getEnchantmentTagList().getCompoundTagAt(i).getShort("lvl");
-							if(lvl_prot >= 16){
-								this.buttonList.get(0).enabled = false;
-							} else if(minCooldown == 0 && !isWorking){
-						    	this.buttonList.get(0).enabled = true;
-						    }
-						}
-					}
-					if(minCooldown == 0 && !isWorking){
-				    	this.buttonList.get(0).enabled = true;
-				    }
-				}
-			} else { 
-				if(minCooldown == 0 && !isWorking){
-					this.buttonList.get(0).enabled = true;
-				}
-			}
+			this.buttonList.get(0).enabled = true;
 		} else {
 			this.isWorking = false;
 			minCooldown = 0;
@@ -113,7 +93,8 @@ public class GuiEnchantWeapon extends GuiContainer{
 			if(minCooldown >= time){
 				this.isWorking = false;
 				minCooldown = 0;
-				LineageCraft.network.sendToServer(new EnchantArmorPacket());
+				System.out.println("---------------packet send-----------");
+				LineageCraft.network.sendToServer(new EnchantWeaponPacket());
 			}
 		}	
 		
@@ -147,6 +128,8 @@ public class GuiEnchantWeapon extends GuiContainer{
 	
 	    this.progressBar.setMin(minCooldown).setMax(maxCooldown);
 	    this.progressBar.draw(this.mc);
+	    
+	    super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}
 	
 
