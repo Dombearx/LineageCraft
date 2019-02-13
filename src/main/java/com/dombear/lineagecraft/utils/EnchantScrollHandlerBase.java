@@ -93,7 +93,7 @@ public class EnchantScrollHandlerBase {
 			enchantmentsOnItem.add(new EnchantmentOnItem(itemstack, enchantment));
 		}
 		
-		int amountOfItems = (Collections.max(enchantmentsOnItem).getEnchantmentLevel() + 1) / 2;
+		int amountOfItems = ((Collections.max(enchantmentsOnItem).getEnchantmentLevel() + 1) / 2) + 1;
 		
 		if(itemstack.getItem() instanceof ItemArmor){
 			ItemArmor itemArmor = (ItemArmor) itemstack.getItem();

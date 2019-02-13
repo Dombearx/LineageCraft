@@ -7,6 +7,7 @@ import com.dombear.lineagecraft.gui.ProgressBar;
 import com.dombear.lineagecraft.gui.ProgressBar.ProgressBarDirection;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantWeapon;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantWeapon;
+import com.dombear.lineagecraft.items.ItemEnchantScrollWeapon;
 import com.dombear.lineagecraft.packets.EnchantArmorPacket;
 import com.dombear.lineagecraft.packets.EnchantWeaponPacket;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
@@ -93,8 +94,7 @@ public class GuiEnchantWeapon extends GuiContainer{
 			if(minCooldown >= time){
 				this.isWorking = false;
 				minCooldown = 0;
-				System.out.println("---------------packet send-----------");
-				LineageCraft.network.sendToServer(new EnchantWeaponPacket());
+				LineageCraft.network.sendToServer(new EnchantWeaponPacket(((ItemEnchantScrollWeapon)this.inventory.getInvItem().getItem()).getType()));
 			}
 		}	
 		
