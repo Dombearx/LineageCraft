@@ -2,6 +2,8 @@ package com.dombear.lineagecraft;
 
 import com.dombear.lineagecraft.packets.EnchantArmorPacket;
 import com.dombear.lineagecraft.packets.EnchantArmorPacketHandler;
+import com.dombear.lineagecraft.packets.EnchantWeaponPacket;
+import com.dombear.lineagecraft.packets.EnchantWeaponPacketHandler;
 import com.dombear.lineagecraft.proxy.CommonProxy;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
 import com.dombear.lineagecraft.utils.handlers.LineageCraftEventHandler;
@@ -58,7 +60,7 @@ public class LineageCraft {
 		//LineageCraftRenderHandler.registerEntityRenders();
 		
 		network = NetworkRegistry.INSTANCE.newSimpleChannel(LineageCraftReferences.MOD_ID);
-//		network.registerMessage(new EWDPacketHandler(), EWDPacket.class, 1, Side.SERVER);
+		network.registerMessage(new EnchantWeaponPacketHandler(), EnchantWeaponPacket.class, 1, Side.SERVER);
 		network.registerMessage(new EnchantArmorPacketHandler(), EnchantArmorPacket.class, 2, Side.SERVER);
 //		network.registerMessage(new CRYTablePacketHandler(), CRYTablePacket.class, 3, Side.SERVER);
 //		network.registerMessage(new SATablePacketHandler(), SATablePacket.class, 4, Side.SERVER);
