@@ -7,6 +7,7 @@ import com.dombear.lineagecraft.gui.ProgressBar;
 import com.dombear.lineagecraft.gui.ProgressBar.ProgressBarDirection;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
+import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
 import com.dombear.lineagecraft.packets.EnchantArmorPacket;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
 import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
@@ -14,7 +15,6 @@ import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
@@ -26,11 +26,9 @@ public class GuiEnchantArmor extends GuiContainer{
 	
 	private boolean isWorking = false;
 	
-	private static final ResourceLocation texture = new ResourceLocation(LineageCraftReferences.MOD_ID, "textures/guis/containers/ewd_container.png");
+	private static final ResourceLocation texture = new ResourceLocation(LineageCraftReferences.MOD_ID, "textures/guis/containers/enchant_scroll_container.png");
 	
 	private static int time = (2 * 20) + 8;
-	private int enchantment_protecion_id = Enchantments.PROTECTION.getEnchantmentID(Enchantments.PROTECTION);
-	private int enchantment_projectile_protecion_id = Enchantments.PROJECTILE_PROTECTION.getEnchantmentID(Enchantments.PROJECTILE_PROTECTION);
 	
 	public static float minCooldown = 0, maxCooldown = time;	
 	private ProgressBar progressBar;
@@ -38,7 +36,6 @@ public class GuiEnchantArmor extends GuiContainer{
 		
 	public GuiEnchantArmor(ContainerEnchantArmor containerItem) {
 		super(containerItem);
-		System.out.println("----gui created");
 		this.inventory = containerItem.inventory;
         
         this.xSize = 176;
@@ -75,6 +72,7 @@ public class GuiEnchantArmor extends GuiContainer{
 	    }       
 	    
         super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
     }
 
 	@Override
@@ -82,28 +80,7 @@ public class GuiEnchantArmor extends GuiContainer{
 		if(inventory.getStackInSlot(0) != ItemStack.EMPTY){
 			ItemStack armor = inventory.getStackInSlot(0);
 			GlStateManager.blendFunc(GlStateManager.SourceFactor.ZERO, GlStateManager.DestFactor.ONE);
-			
-			if(armor.isItemEnchanted()){
-				for(int i = 0; i < armor.getEnchantmentTagList().tagCount(); i++){
-					if(armor.getEnchantmentTagList().getCompoundTagAt(i).hasKey("id")){
-						if(armor.getEnchantmentTagList().getCompoundTagAt(i).getShort("id") == enchantment_protecion_id){
-							int lvl_prot = armor.getEnchantmentTagList().getCompoundTagAt(i).getShort("lvl");
-							if(lvl_prot >= 16){
-								this.buttonList.get(0).enabled = false;
-							} else if(minCooldown == 0 && !isWorking){
-						    	this.buttonList.get(0).enabled = true;
-						    }
-						}
-					}
-					if(minCooldown == 0 && !isWorking){
-				    	this.buttonList.get(0).enabled = true;
-				    }
-				}
-			} else { 
-				if(minCooldown == 0 && !isWorking){
-					this.buttonList.get(0).enabled = true;
-				}
-			}
+			this.buttonList.get(0).enabled = true;
 		} else {
 			this.isWorking = false;
 			minCooldown = 0;
@@ -113,7 +90,7 @@ public class GuiEnchantArmor extends GuiContainer{
 			if(minCooldown >= time){
 				this.isWorking = false;
 				minCooldown = 0;
-				LineageCraft.network.sendToServer(new EnchantArmorPacket());
+				LineageCraft.network.sendToServer(new EnchantArmorPacket(((ItemEnchantScrollArmor)this.inventory.getInvItem().getItem()).getType()));
 			}
 		}	
 		

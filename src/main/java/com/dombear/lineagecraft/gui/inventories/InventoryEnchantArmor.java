@@ -2,6 +2,7 @@ package com.dombear.lineagecraft.gui.inventories;
 
 import com.dombear.lineagecraft.init.LineageCraftItems;
 import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
+import com.dombear.lineagecraft.items.ItemEnchantScrollWeapon;
 import com.dombear.lineagecraft.utils.LineageCraftTypes.Type;
 
 import net.minecraft.entity.item.EntityItem;
@@ -14,9 +15,7 @@ import net.minecraft.util.text.TextComponentString;
 
 public class InventoryEnchantArmor implements IInventory{
 	
-	private String nameDiamond = "Enchant Armor Diamond-Grade";
-	private String nameIron = "Enchant Armor Iron-Grade";
-	private Type type;
+	private String name = "";
 
 	private ItemStack invItem;
 	
@@ -26,10 +25,20 @@ public class InventoryEnchantArmor implements IInventory{
 	
 	public InventoryEnchantArmor(ItemStack stack){
 		invItem = stack;
-		inventory[0] = ItemStack.EMPTY;
-		if(stack.getItem() instanceof ItemEnchantScrollArmor){
-			type = ((ItemEnchantScrollArmor)stack.getItem()).getType();
+		
+		switch (((ItemEnchantScrollArmor) stack.getItem()).getType()) {
+		case IRON:
+			name = "Enchant Armor Iron-Grade";
+			break;
+		case DIAMOND:
+			name = "Enchant Armor Diamond-Grade";
+			break;
+		default:
+			name = "Enchant Armor Unknown-Grade";
+			break;
 		}
+		
+		inventory[0] = ItemStack.EMPTY;
 	}
 	
 	@Override
@@ -75,18 +84,12 @@ public class InventoryEnchantArmor implements IInventory{
 	
 	@Override
 	public boolean hasCustomName() {
-		return nameDiamond.length() > 0;		
+		return name.length() > 0;		
 	}
 	
 	@Override
 	public String getName() {
-		if(type == Type.DIAMOND){
-			return nameDiamond;
-		}
-		if(type == Type.IRON){
-			return nameIron;
-		}
-		return "Unknown inventory itemstack type!";
+		return name;
 	}
 	
 	@Override
@@ -109,25 +112,15 @@ public class InventoryEnchantArmor implements IInventory{
 		return true;
 	}	
 	
+	//This is done in custom inventory slot
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack itemstack){
-//		return (!(itemstack.getItem() instanceof ItemEnchantScrollArmor) && (itemstack.getItem().equals(Items.DIAMOND_BOOTS) ||
-//				itemstack.getItem().equals(Items.DIAMOND_LEGGINGS) ||
-//				itemstack.getItem().equals(Items.DIAMOND_CHESTPLATE) ||
-//				itemstack.getItem().equals(Items.DIAMOND_HELMET)
-//				));
 		return true;
 	}
 	
 	@Override
 	public ITextComponent getDisplayName() {
-		if(type == Type.DIAMOND){
-			return new TextComponentString(nameDiamond);
-		}
-		if(type == Type.IRON){
-			return new TextComponentString(nameIron);
-		}
-		return new TextComponentString("Unknown inventory itemstack type!");
+		return new TextComponentString(name);
 	}
 		
 	@Override
@@ -168,8 +161,12 @@ public class InventoryEnchantArmor implements IInventory{
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		for (int i = 0; i < inventory.length; i++) {
+			if(inventory[i] != ItemStack.EMPTY){
+				return false;
+			}
+		}
+		return true;
 	}
 
 

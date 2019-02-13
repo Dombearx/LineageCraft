@@ -1,18 +1,56 @@
 package com.dombear.lineagecraft.packets;
 
+import com.dombear.lineagecraft.utils.LineageCraftTypes.Type;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class EnchantArmorPacket implements IMessage{
 
+	public int enchantmentScrollTypeCoded;
+	
+	public EnchantArmorPacket(){
+		
+	}
+	
+	/**
+	 * 
+	 * @param enchantmentScrollType 1 - iron, 2 - diamond, 3 - sgrade
+	 */
+	public EnchantArmorPacket(Type enchantmentScrollType){
+		switch (enchantmentScrollType) {
+		case IRON:
+			enchantmentScrollTypeCoded = 1;
+			break;
+		case DIAMOND:
+			enchantmentScrollTypeCoded = 2;
+			break;
+		default:
+			enchantmentScrollTypeCoded = 0;
+			break;
+		}
+		
+	}
+
+	public Type getScrollType(){
+		switch (enchantmentScrollTypeCoded) {
+		case 1:
+				return Type.IRON;
+		case 2:
+				return Type.DIAMOND;
+		default:
+				return null;
+		}
+	}
+
 	@Override
 	public void fromBytes(ByteBuf buf) {
-		
+		enchantmentScrollTypeCoded = buf.readInt();
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
-		
+		buf.writeInt(enchantmentScrollTypeCoded);
 	}
 
 }
