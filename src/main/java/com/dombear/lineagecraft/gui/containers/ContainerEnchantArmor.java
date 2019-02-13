@@ -3,6 +3,7 @@ package com.dombear.lineagecraft.gui.containers;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
 import com.dombear.lineagecraft.gui.slots.SlotEnchantArmor;
 import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
+import com.dombear.lineagecraft.items.ItemEnchantScrollWeapon;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
@@ -23,8 +24,10 @@ public class ContainerEnchantArmor  extends Container{
 	public ContainerEnchantArmor(InventoryPlayer playerInv, InventoryEnchantArmor inventoryEnchantArmor) {
 		
 		this.inventory = inventoryEnchantArmor;
+		
+		ItemEnchantScrollArmor inventoryItem = (ItemEnchantScrollArmor) this.inventory.getInvItem().getItem();
 		// Slot 0
-	    this.addSlotToContainer(new SlotEnchantArmor(this.inventory, 0, 80, 35));
+	    this.addSlotToContainer(new SlotEnchantArmor(this.inventory, 0, 80, 35, inventoryItem.getType()));
 	
 
 	    // Player Inventory, Slot 9-35, Slot IDs 9-35
@@ -110,7 +113,6 @@ public class ContainerEnchantArmor  extends Container{
 				return ItemStack.EMPTY;
 			}
 
-			//slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
 			slot.onSlotChanged();
 		}
 

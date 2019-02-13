@@ -14,6 +14,7 @@ import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
@@ -28,8 +29,8 @@ public class GuiEnchantArmor extends GuiContainer{
 	private static final ResourceLocation texture = new ResourceLocation(LineageCraftReferences.MOD_ID, "textures/guis/containers/ewd_container.png");
 	
 	private static int time = (2 * 20) + 8;
-	private int enchantment_protecion_id = 0;
-	private int enchantment_projectile_protecion_id = 4;
+	private int enchantment_protecion_id = Enchantments.PROTECTION.getEnchantmentID(Enchantments.PROTECTION);
+	private int enchantment_projectile_protecion_id = Enchantments.PROJECTILE_PROTECTION.getEnchantmentID(Enchantments.PROJECTILE_PROTECTION);
 	
 	public static float minCooldown = 0, maxCooldown = time;	
 	private ProgressBar progressBar;

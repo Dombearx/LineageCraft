@@ -26,9 +26,9 @@ public class ContainerEnchantWeapon extends Container{
 		
 		this.inventory = inventoryEnchantWeapon;
 		
-		ItemEnchantScrollWeapon w = (ItemEnchantScrollWeapon) this.inventory.getInvItem().getItem();
+		ItemEnchantScrollWeapon inventoryItem = (ItemEnchantScrollWeapon) this.inventory.getInvItem().getItem();
 		// Slot 0
-	    this.addSlotToContainer(new SlotEnchantWeapon(this.inventory, 0, 80, 35, w.getType()));
+	    this.addSlotToContainer(new SlotEnchantWeapon(this.inventory, 0, 80, 35, inventoryItem.getType()));
 	
 
 	    // Player Inventory, Slot 9-35, Slot IDs 9-35
