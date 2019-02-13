@@ -1,6 +1,7 @@
 package com.dombear.lineagecraft.gui.inventories;
 
 import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
+import com.dombear.lineagecraft.items.ItemEnchantScrollWeapon;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -11,7 +12,7 @@ import net.minecraft.util.text.TextComponentString;
 
 public class InventoryEnchantWeapon implements IInventory{
 	
-	private String name = "Enchant Armor Diamond-Grade";
+	private String name = "";
 
 	private ItemStack invItem;
 	
@@ -21,6 +22,17 @@ public class InventoryEnchantWeapon implements IInventory{
 	
 	public InventoryEnchantWeapon(ItemStack stack){
 		invItem = stack;
+		switch (((ItemEnchantScrollWeapon) stack.getItem()).getType()) {
+		case IRON:
+			name = "Enchant Weapon Iron-Grade";
+			break;
+		case DIAMOND:
+			name = "Enchant Weapon Diamond-Grade";
+			break;
+		default:
+			name = "Enchant Weapon Unknown-Grade";
+			break;
+		}
 		inventory[0] = ItemStack.EMPTY;
 	}
 	
@@ -95,13 +107,9 @@ public class InventoryEnchantWeapon implements IInventory{
 		return true;
 	}	
 	
+	//This is done in custom inventory slot
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack itemstack){
-//		return (!(itemstack.getItem() instanceof ItemEnchantScrollArmor) && (itemstack.getItem().equals(Items.DIAMOND_BOOTS) ||
-//				itemstack.getItem().equals(Items.DIAMOND_LEGGINGS) ||
-//				itemstack.getItem().equals(Items.DIAMOND_CHESTPLATE) ||
-//				itemstack.getItem().equals(Items.DIAMOND_HELMET)
-//				));
 		return true;
 	}
 	
@@ -148,8 +156,12 @@ public class InventoryEnchantWeapon implements IInventory{
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		for (int i = 0; i < inventory.length; i++) {
+			if(inventory[i] != ItemStack.EMPTY){
+				return false;
+			}
+		}
+		return true;
 	}
 
 

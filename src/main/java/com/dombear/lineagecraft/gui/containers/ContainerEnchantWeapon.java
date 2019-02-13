@@ -18,7 +18,7 @@ public class ContainerEnchantWeapon extends Container{
 	
 	public final InventoryEnchantWeapon inventory;
 	
-	private static final int INV_START = InventoryEnchantArmor.INV_SIZE, INV_END = INV_START+26,
+	private static final int INV_START = InventoryEnchantWeapon.INV_SIZE, INV_END = INV_START+26,
 			HOTBAR_START = INV_END+1, HOTBAR_END = HOTBAR_START+8;
 	
 	
@@ -114,7 +114,6 @@ public class ContainerEnchantWeapon extends Container{
 				return ItemStack.EMPTY;
 			}
 
-			//slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
 			slot.onSlotChanged();
 		}
 

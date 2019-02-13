@@ -29,11 +29,9 @@ public class GuiEnchantWeapon extends GuiContainer{
 	
 	private boolean isWorking = false;
 	
-	private static final ResourceLocation texture = new ResourceLocation(LineageCraftReferences.MOD_ID, "textures/guis/containers/ewd_container.png");
+	private static final ResourceLocation texture = new ResourceLocation(LineageCraftReferences.MOD_ID, "textures/guis/containers/enchant_scroll_container.png");
 	
 	private static int time = (2 * 20) + 8;
-	private int enchantment_protecion_id = Enchantments.PROTECTION.getEnchantmentID(Enchantments.PROTECTION);
-	private int enchantment_projectile_protecion_id = Enchantments.PROJECTILE_PROTECTION.getEnchantmentID(Enchantments.PROJECTILE_PROTECTION);
 	
 	public static float minCooldown = 0, maxCooldown = time;	
 	private ProgressBar progressBar;
