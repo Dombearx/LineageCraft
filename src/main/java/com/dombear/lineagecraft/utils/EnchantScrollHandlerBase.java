@@ -24,6 +24,7 @@ public class EnchantScrollHandlerBase {
 	public int useEnchantScrollOnItem(ItemStack itemstack, ArrayList<Enchantment> enchantments){
 		
 		if(itemstack.isEmpty() || enchantments.size() == 0){
+			System.out.println("---------------encahntments empty-----------");
 			return -1;
 		}
 		
@@ -45,6 +46,7 @@ public class EnchantScrollHandlerBase {
 		
 		//Max enchantment level for all enchantments
 		if(Collections.min(enchantmentsOnItem).getEnchantmentLevel() >= LineageCraftReferences.MAX_ENCHANTMENT_LEVEL){
+			System.out.println("---------------encahntments max-----------");
 			return -1;
 		}
 		
@@ -91,7 +93,7 @@ public class EnchantScrollHandlerBase {
 			enchantmentsOnItem.add(new EnchantmentOnItem(itemstack, enchantment));
 		}
 		
-		int amountOfItems = (Collections.max(enchantmentsOnItem).getEnchantmentLevel() + 1) / 6;
+		int amountOfItems = (Collections.max(enchantmentsOnItem).getEnchantmentLevel() + 1) / 2;
 		
 		if(itemstack.getItem() instanceof ItemArmor){
 			ItemArmor itemArmor = (ItemArmor) itemstack.getItem();

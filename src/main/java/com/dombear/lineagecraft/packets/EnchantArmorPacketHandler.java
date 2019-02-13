@@ -8,6 +8,7 @@ import java.util.Random;
 import com.dombear.lineagecraft.gui.containers.ContainerEnchantArmor;
 import com.dombear.lineagecraft.gui.inventories.InventoryEnchantArmor;
 import com.dombear.lineagecraft.init.LineageCraftItems;
+import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
 import com.dombear.lineagecraft.utils.EnchantScrollHandlerBase;
 import com.dombear.lineagecraft.utils.EnchantmentOnItem;
 import com.dombear.lineagecraft.utils.LineageCraftReferences;
@@ -48,7 +49,7 @@ public class EnchantArmorPacketHandler extends EnchantScrollHandlerBase implemen
 				return null;
 			}
 			
-			if(inventoryPlayer.getCurrentItem().getItem().equals(LineageCraftItems.enchantArmorDGrade)){
+			if(inventoryPlayer.getCurrentItem().getItem() instanceof ItemEnchantScrollArmor){
 				
 				
 				
