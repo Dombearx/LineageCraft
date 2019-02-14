@@ -14,10 +14,10 @@ item.sacryred.name=Red Special Ability Crystal
 item.sacrygreen.name=Green Special Ability Crystal
 item.sacryblue.name=Blue Special Ability Crystal
 
-item.brokenhelmet.name=Broken Helmet
-item.brokenchestplate.name=Broken Chestplate
-item.brokenleggings.name=Broken Leggings
-item.brokenboots.name=Broken Boots
+item.brokenhelmetdiamond.name=Broken Diamond Helmet
+item.brokenchestplatediamond.name=Broken Diamond Chestplate
+item.brokenleggingsdiamond.name=Braoken Diamond Leggings
+item.brokenbootsdiamond.name=Broken Diamond Boots
 
 
 item.sspack.name=Soulshot Bag
