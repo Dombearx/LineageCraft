@@ -1,7 +1,8 @@
 package com.dombear.lineagecraft.utils.handlers;
 
 import com.dombear.lineagecraft.init.LineageCraftItems;
-import com.dombear.lineagecraft.utils.IHasModel;
+import com.dombear.lineagecraft.utils.interfaces.IHasModel;
+import com.dombear.lineagecraft.world.generators.WorldGenerateCustomStructures;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -9,6 +10,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /*
  * EventBusSubscriber means that this class will be automaticly launched while game loading
@@ -45,7 +47,11 @@ public class LineageCraftRegisterHandler {
 	    */
 	}
 	
+	public static void preInitRegisters(){
+		GameRegistry.registerWorldGenerator(new WorldGenerateCustomStructures(), 0);
+	}
+	
 	public static void initRegisters() {
-		//LineageCraftSoundHandler.init();
+		LineageCraftSoundHandler.init();
 	}
 }

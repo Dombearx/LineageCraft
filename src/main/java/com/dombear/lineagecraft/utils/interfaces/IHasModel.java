@@ -1,4 +1,4 @@
-package com.dombear.lineagecraft.utils;
+package com.dombear.lineagecraft.utils.interfaces;
 
 public interface IHasModel {
 

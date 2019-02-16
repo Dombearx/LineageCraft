@@ -2,7 +2,7 @@ package com.dombear.lineagecraft.items;
 
 import com.dombear.lineagecraft.LineageCraft;
 import com.dombear.lineagecraft.init.LineageCraftItems;
-import com.dombear.lineagecraft.utils.IHasModel;
+import com.dombear.lineagecraft.utils.interfaces.IHasModel;
 
 import net.minecraft.item.Item;
 

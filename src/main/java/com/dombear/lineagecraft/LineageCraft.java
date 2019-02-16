@@ -47,6 +47,9 @@ public class LineageCraft {
 		OBJLoader.INSTANCE.addDomain(LineageCraftReferences.MOD_ID);
 		
 		
+		LineageCraftRegisterHandler.preInitRegisters();
+		
+		
 //		
 //		AchievementHandler.registerAchievements();
 //		
@@ -87,7 +90,6 @@ public class LineageCraft {
 		
 		LineageCraftRegisterHandler.initRegisters();
 		
-		LineageCraftSoundHandler.init();
 	}
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
