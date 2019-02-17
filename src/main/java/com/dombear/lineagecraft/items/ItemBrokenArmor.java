@@ -39,7 +39,6 @@ public class ItemBrokenArmor extends LineageCraftArmorBase{
 				}
 			}
 		}
-		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 
 }
