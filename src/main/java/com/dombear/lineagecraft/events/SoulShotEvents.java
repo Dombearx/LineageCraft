@@ -13,6 +13,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class SoulShotEvents {
@@ -35,18 +36,9 @@ public class SoulShotEvents {
 	}
 	
 	@SubscribeEvent
-	public void onCritical(LivingHurtEvent event){
-		if(event.getSource().getTrueSource() instanceof EntityPlayer){
-			EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
-			boolean criticalHit = player.fallDistance > 0.0F && !player.onGround && 
-					!player.isOnLadder() && !player.isInWater() && 
-					!player.isPotionActive(Potion.getPotionById(15)) && !player.isRiding() && 
-					event.getEntity() instanceof EntityLivingBase && event.getSource().damageType.equals("player");
-			if(criticalHit){
-				player.sendMessage(new TextComponentString("CriticalHit!"));
-				player.getEntityWorld().playSound(null, player.getPosition(), LineageCraftSoundHandler.CTRITICAL, SoundCategory.PLAYERS, 0.5F, 1.0F);
-			}
-		}
+	public void onCriticalHit(CriticalHitEvent event){
+		event.getEntityPlayer().sendMessage(new TextComponentString("CriticalHit!"));
+		event.getEntityPlayer().getEntityWorld().playSound(null, event.getEntityPlayer().getPosition(), LineageCraftSoundHandler.CTRITICAL, SoundCategory.PLAYERS, 0.5F, 1.0F);
 	}
 	
 	@SubscribeEvent
@@ -54,13 +46,10 @@ public class SoulShotEvents {
 		
 		if(event.getSource().getTrueSource() instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
-			
-			player.sendMessage(new TextComponentString("DMG: " + event.getAmount()));
-			player.sendMessage(new TextComponentString("DMG TYPE: " + event.getSource().damageType));
-			
+					
 			
 			InventoryPlayer inv = player.inventory;
-			if(event.getSource().damageType.equals("arrow")){
+			if(event.getSource().getDamageType().equals("arrow")){
 				if(slotInHotbar(inv, LineageCraftItems.soulShotDGrade) > -1){
 					event.setAmount(event.getAmount()*1.5f);
 					inv.getStackInSlot(slotInHotbar(inv, LineageCraftItems.soulShotDGrade)).shrink(1);
@@ -72,14 +61,14 @@ public class SoulShotEvents {
 					return;
 				}
 			}
-			if(event.getSource().damageType.equals("player")){
+			if(event.getSource().getDamageType().equals("player")){
 				if(!player.getHeldItemMainhand().isEmpty()){
 					ItemStack item = player.getHeldItemMainhand();
+					
 					if(item.getItem() == Items.DIAMOND_SWORD || item.getItem() == Items.DIAMOND_AXE){
 						if(slotInHotbar(inv, LineageCraftItems.soulShotDGrade) > -1){
 							event.setAmount(event.getAmount()*1.5f);
 							inv.getStackInSlot(slotInHotbar(inv, LineageCraftItems.soulShotDGrade)).shrink(1);
-							player.sendMessage(new TextComponentString("NEW DMG: " + event.getAmount()));
 							effects(player);
 							return;
 						}
@@ -90,6 +79,7 @@ public class SoulShotEvents {
 						if(slotInHotbar(inv, LineageCraftItems.soulShotIGrade) > -1){
 							event.setAmount(event.getAmount()*1.5f);
 							inv.getStackInSlot(slotInHotbar(inv, LineageCraftItems.soulShotIGrade)).shrink(1);
+							effects(player);
 							return;
 						}
 					}
