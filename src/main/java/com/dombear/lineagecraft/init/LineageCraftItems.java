@@ -43,6 +43,11 @@ public class LineageCraftItems {
 	public static final ItemArmor brokenChestplateDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenchestplatediamond", BROKENARMOR, 1, EntityEquipmentSlot.CHEST);
 	public static final ItemArmor brokenLeggingsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenleggingsdiamond", BROKENARMOR, 2, EntityEquipmentSlot.LEGS);
 	public static final ItemArmor brokenBootsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenbootsdiamond", BROKENARMOR, 1, EntityEquipmentSlot.FEET);
+	
+	public static final ItemArmor brokenHelmetIron = new ItemBrokenArmor(Type.IRON, "brokenhelmetiron", BROKENARMOR, 1, EntityEquipmentSlot.HEAD);
+	public static final ItemArmor brokenChestplateIron = new ItemBrokenArmor(Type.IRON, "brokenchestplateiron", BROKENARMOR, 1, EntityEquipmentSlot.CHEST);
+	public static final ItemArmor brokenLeggingsIron = new ItemBrokenArmor(Type.IRON, "brokenleggingsiron", BROKENARMOR, 2, EntityEquipmentSlot.LEGS);
+	public static final ItemArmor brokenBootsIron = new ItemBrokenArmor(Type.IRON, "brokenbootsiron", BROKENARMOR, 1, EntityEquipmentSlot.FEET);
 /*
 	
 	
