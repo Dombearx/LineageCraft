@@ -1,12 +1,16 @@
 package com.dombear.lineagecraft.events;
 
 import com.dombear.lineagecraft.init.LineageCraftItems;
+import com.dombear.lineagecraft.utils.handlers.LineageCraftSoundHandler;
 
+import net.minecraft.client.audio.SoundListSerializer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -21,29 +25,23 @@ public class BrokenArmorEvents {
 	@SubscribeEvent
 	public void onArmorBroke(LivingHurtEvent event){
 		
-		System.out.println("broken armor event fired");
 		
 		//Entity is a player
 		if(event.getEntity() instanceof EntityPlayer){
 			
-			System.out.println("player ");
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			NonNullList<ItemStack> armorInventory = (NonNullList<ItemStack>) player.getArmorInventoryList();
 			
 			//Player has armor
 			if(!armorInventory.isEmpty()){
-				System.out.println("armor not empty list ");
 				ItemArmor armor;
 				ItemStack brokenArmor = null;
 				for (int i = 0; i < armorInventory.size(); i++) {
 					if(armorInventory.get(i) != ItemStack.EMPTY && armorInventory.get(i).getItem() instanceof ItemArmor){
-						System.out.println("item armor at " + i);
 						if(armorInventory.get(i).isItemEnchanted()){
-							System.out.println("armor enchanted");
 							armor = (ItemArmor) armorInventory.get(i).getItem();
-							player.sendMessage(new TextComponentString("Armor damage left - " + (armor.getMaxDamage() - armor.getDamage(armorInventory.get(i)))));
 							if((armor.getMaxDamage() - armor.getDamage(armorInventory.get(i))) <= 0){
-								System.out.println("armor damage left < 0");
+								player.getEntityWorld().playSound(null, player.getPosition(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 10.5F, 1.0F);
 								switch (armor.getArmorMaterial()) {
 								case IRON:
 									switch (armor.getEquipmentSlot()) {
@@ -105,6 +103,7 @@ public class BrokenArmorEvents {
 
 								
 								armorInventory.set(i, brokenArmor);
+
 							}
 						}
 					}
