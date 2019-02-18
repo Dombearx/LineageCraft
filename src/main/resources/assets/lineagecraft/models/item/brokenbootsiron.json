@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "lineagecraft:items/brokenbootsdiamond"
+        "layer0": "lineagecraft:items/brokenbootsiron"
     }
 }
