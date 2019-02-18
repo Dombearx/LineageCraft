@@ -1,0 +1,8 @@
+{
+    "ingredients": {
+
+    },
+    "recipes": {
+        "broken_armor_shapeless": "com.dombear.lineagecraft.crafting.recipes.BrokenArmorRecipe$Factory"
+    }
+}

@@ -1,0 +1,27 @@
+{
+	"_comment": [
+		"Repair a broken diamond helmet, remain enchantments and name"
+	],
+	"type": "lineagecraft:broken_armor_shapeless",
+	"ingredients": [
+		{
+			"item": "lineagecraft:brokenhelmetdiamond",
+			"data": 0
+		},
+		{
+			"item": "minecraft:diamond",
+			"data": 0
+	    },
+        {
+            "item": "minecraft:diamond",
+            "data": 0
+        },
+        {
+            "item": "minecraft:diamond",
+            "data": 0
+        }
+	],
+	"result": {
+		"item": "minecraft:diamond_helmet"
+	}
+}
