@@ -1,0 +1,27 @@
+{
+	"_comment": [
+		"Repair a broken iron chestplate, remain enchantments and name"
+	],
+	"type": "lineagecraft:broken_armor_shapeless",
+	"ingredients": [
+		{
+			"item": "lineagecraft:brokenchestplateiron",
+			"data": 0
+		},
+		{
+			"item": "minecraft:iron_ingot",
+			"data": 0
+	    },
+        {
+            "item": "minecraft:iron_ingot",
+            "data": 0
+        },
+        {
+            "item": "minecraft:iron_ingot",
+            "data": 0
+        }
+	],
+	"result": {
+		"item": "minecraft:iron_chestplate"
+	}
+}

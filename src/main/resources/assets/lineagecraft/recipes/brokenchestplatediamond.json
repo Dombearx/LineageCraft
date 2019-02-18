@@ -1,0 +1,27 @@
+{
+	"_comment": [
+		"Repair a broken diamond chestplate, remain enchantments and name"
+	],
+	"type": "lineagecraft:broken_armor_shapeless",
+	"ingredients": [
+		{
+			"item": "lineagecraft:brokenchestplatediamond",
+			"data": 0
+		},
+		{
+			"item": "minecraft:diamond",
+			"data": 0
+	    },
+        {
+            "item": "minecraft:diamond",
+            "data": 0
+        },
+        {
+            "item": "minecraft:diamond",
+            "data": 0
+        }
+	],
+	"result": {
+		"item": "minecraft:diamond_chestplate"
+	}
+}
