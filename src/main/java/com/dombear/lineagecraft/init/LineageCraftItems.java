@@ -18,7 +18,8 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class LineageCraftItems {
 	
-	public static ArmorMaterial BROKENARMOR = EnumHelper.addArmorMaterial("BROKENARMOR", "lineagecraft:brokenarmor", 0, new int[] {0, 0, 0, 0}, 0, null, 0);
+	public static ArmorMaterial BROKENARMORDIAMOND = EnumHelper.addArmorMaterial("BROKENARMORDIAMOND", "lineagecraft:brokenarmordiamond", 0, new int[] {0, 0, 0, 0}, 0, null, 0);
+	public static ArmorMaterial BROKENARMORIRON = EnumHelper.addArmorMaterial("BROKENARMORIRON", "lineagecraft:brokenarmoriron", 0, new int[] {0, 0, 0, 0}, 0, null, 0);
 	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 	
@@ -39,15 +40,15 @@ public class LineageCraftItems {
 	public static final Item sacrygreen= new ItemSACry("sacrygreen", SAType.GREEN);
 	public static final Item sacryblue = new ItemSACry("sacryblue", SAType.BLUE);
 	*/
-	public static final ItemArmor brokenHelmetDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenhelmetdiamond", BROKENARMOR, 1, EntityEquipmentSlot.HEAD);
-	public static final ItemArmor brokenChestplateDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenchestplatediamond", BROKENARMOR, 1, EntityEquipmentSlot.CHEST);
-	public static final ItemArmor brokenLeggingsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenleggingsdiamond", BROKENARMOR, 2, EntityEquipmentSlot.LEGS);
-	public static final ItemArmor brokenBootsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenbootsdiamond", BROKENARMOR, 1, EntityEquipmentSlot.FEET);
+	public static final ItemArmor brokenHelmetDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenhelmetdiamond", BROKENARMORDIAMOND, 1, EntityEquipmentSlot.HEAD);
+	public static final ItemArmor brokenChestplateDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenchestplatediamond", BROKENARMORDIAMOND, 1, EntityEquipmentSlot.CHEST);
+	public static final ItemArmor brokenLeggingsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenleggingsdiamond", BROKENARMORDIAMOND, 2, EntityEquipmentSlot.LEGS);
+	public static final ItemArmor brokenBootsDiamond = new ItemBrokenArmor(Type.DIAMOND, "brokenbootsdiamond", BROKENARMORDIAMOND, 1, EntityEquipmentSlot.FEET);
 	
-	public static final ItemArmor brokenHelmetIron = new ItemBrokenArmor(Type.IRON, "brokenhelmetiron", BROKENARMOR, 1, EntityEquipmentSlot.HEAD);
-	public static final ItemArmor brokenChestplateIron = new ItemBrokenArmor(Type.IRON, "brokenchestplateiron", BROKENARMOR, 1, EntityEquipmentSlot.CHEST);
-	public static final ItemArmor brokenLeggingsIron = new ItemBrokenArmor(Type.IRON, "brokenleggingsiron", BROKENARMOR, 2, EntityEquipmentSlot.LEGS);
-	public static final ItemArmor brokenBootsIron = new ItemBrokenArmor(Type.IRON, "brokenbootsiron", BROKENARMOR, 1, EntityEquipmentSlot.FEET);
+	public static final ItemArmor brokenHelmetIron = new ItemBrokenArmor(Type.IRON, "brokenhelmetiron", BROKENARMORIRON, 1, EntityEquipmentSlot.HEAD);
+	public static final ItemArmor brokenChestplateIron = new ItemBrokenArmor(Type.IRON, "brokenchestplateiron", BROKENARMORIRON, 1, EntityEquipmentSlot.CHEST);
+	public static final ItemArmor brokenLeggingsIron = new ItemBrokenArmor(Type.IRON, "brokenleggingsiron", BROKENARMORIRON, 2, EntityEquipmentSlot.LEGS);
+	public static final ItemArmor brokenBootsIron = new ItemBrokenArmor(Type.IRON, "brokenbootsiron", BROKENARMORIRON, 1, EntityEquipmentSlot.FEET);
 /*
 	
 	
