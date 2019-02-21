@@ -80,18 +80,16 @@ public class LineageCraft {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
-		System.out.println("----------init-----------------");
+		System.out.println("LineageCraft init");
 		
 		proxy.registerGuis();
 		eventHandler.registerEvents();
 		
 		LineageCraftRegisterHandler.initRegisters();
-		
-		LineageCraftSoundHandler.init();
 	}
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
-		System.out.println("----------post init-----------------");
+		System.out.println("LineageCraft postInit");
 
 	}
 }

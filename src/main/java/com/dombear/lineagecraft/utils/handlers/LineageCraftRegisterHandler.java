@@ -46,6 +46,6 @@ public class LineageCraftRegisterHandler {
 	}
 	
 	public static void initRegisters() {
-		//LineageCraftSoundHandler.init();
+		LineageCraftSoundHandler.init();
 	}
 }
