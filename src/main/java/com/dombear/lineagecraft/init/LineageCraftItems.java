@@ -4,6 +4,7 @@ package com.dombear.lineagecraft.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dombear.lineagecraft.items.ItemAmuletOfLost;
 import com.dombear.lineagecraft.items.ItemBrokenArmor;
 import com.dombear.lineagecraft.items.ItemEnchantScrollArmor;
 import com.dombear.lineagecraft.items.ItemEnchantScrollWeapon;
@@ -35,6 +36,8 @@ public class LineageCraftItems {
 	public static final Item enchantArmorIGrade = new ItemEnchantScrollArmor("enchantarmorigrade", Type.IRON);
 	public static final Item enchantWeaponIGrade = new ItemEnchantScrollWeapon("enchantweaponigrade", Type.IRON);
 	
+	public static Item amuletOfLost = new ItemAmuletOfLost("amuletoflost");
+	
 	/*
 	public static final Item sacryred = new ItemSACry("sacryred", SAType.RED);
 	public static final Item sacrygreen= new ItemSACry("sacrygreen", SAType.GREEN);
@@ -49,9 +52,5 @@ public class LineageCraftItems {
 	public static final ItemArmor brokenChestplateIron = new ItemBrokenArmor(Type.IRON, "brokenchestplateiron", BROKENARMORIRON, 1, EntityEquipmentSlot.CHEST);
 	public static final ItemArmor brokenLeggingsIron = new ItemBrokenArmor(Type.IRON, "brokenleggingsiron", BROKENARMORIRON, 2, EntityEquipmentSlot.LEGS);
 	public static final ItemArmor brokenBootsIron = new ItemBrokenArmor(Type.IRON, "brokenbootsiron", BROKENARMORIRON, 1, EntityEquipmentSlot.FEET);
-/*
-	
-	
-//	public static Item amuletOfLost;
-*/
+
 }
