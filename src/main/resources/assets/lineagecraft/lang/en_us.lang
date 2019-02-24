@@ -1,4 +1,4 @@
-item.amuletOfLost.name=Amulet of lost
+item.amuletoflost.name=Amulet of lost
 
 item.enchantarmordgrade.name=Enchant armor D-grade
 item.enchantweapondgrade.name=Enchant weapon D-grade
@@ -18,6 +18,11 @@ item.brokenhelmetdiamond.name=Broken Diamond Helmet
 item.brokenchestplatediamond.name=Broken Diamond Chestplate
 item.brokenleggingsdiamond.name=Braoken Diamond Leggings
 item.brokenbootsdiamond.name=Broken Diamond Boots
+
+item.brokenhelmetiron.name=Broken Iron Helmet
+item.brokenchestplateiron.name=Broken Iron Chestplate
+item.brokenleggingsiron.name=Braoken Iron Leggings
+item.brokenbootsiron.name=Broken Iron Boots
 
 
 item.sspack.name=Soulshot Bag
