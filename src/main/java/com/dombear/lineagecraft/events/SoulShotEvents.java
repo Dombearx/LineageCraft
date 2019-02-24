@@ -37,8 +37,9 @@ public class SoulShotEvents {
 	
 	@SubscribeEvent
 	public void onCriticalHit(CriticalHitEvent event){
-		event.getEntityPlayer().sendMessage(new TextComponentString("CriticalHit!"));
-		event.getEntityPlayer().getEntityWorld().playSound(null, event.getEntityPlayer().getPosition(), LineageCraftSoundHandler.CTRITICAL, SoundCategory.PLAYERS, 0.5F, 1.0F);
+		if(event.isVanillaCritical()){
+			event.getEntityPlayer().getEntityWorld().playSound(null, event.getEntityPlayer().getPosition(), LineageCraftSoundHandler.CTRITICAL, SoundCategory.PLAYERS, 0.5F, 1.0F);
+		}
 	}
 	
 	@SubscribeEvent
